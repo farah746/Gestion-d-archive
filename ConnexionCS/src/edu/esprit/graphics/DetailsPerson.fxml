@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.graphics.DetailsPersonController">
+<AnchorPane id="AnchorPane" prefHeight="749.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.graphics.DetailsPersonController">
   <children>
-    <TextField fx:id="labelNom" editable="false" layoutX="200.0" layoutY="127.0" prefWidth="200.0" />
-    <TextField fx:id="labelPrenom" editable="false" layoutX="200.0" layoutY="219.0" prefWidth="200.0" />
-      <TextField fx:id="tgadresse" layoutX="207.0" layoutY="280.0" />
-      <TextField fx:id="tgcin" layoutX="190.0" layoutY="70.0" />
+    <TextField fx:id="labelNom" editable="false" layoutX="200.0" layoutY="156.0" prefWidth="200.0" />
+    <TextField fx:id="labelPrenom" editable="false" layoutX="207.0" layoutY="219.0" prefWidth="200.0" />
+      <TextField fx:id="tgadresse" layoutX="207.0" layoutY="280.0" prefHeight="26.0" prefWidth="200.0" />
+      <TextField fx:id="tgcin" layoutX="200.0" layoutY="73.0" prefHeight="26.0" prefWidth="200.0" />
+      <ImageView fx:id="IMAG" fitHeight="150.0" fitWidth="200.0" layoutX="603.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTextField fx:id="labelemail" layoutX="216.0" layoutY="344.0" />
+      <JFXTextField fx:id="labelgenre" layoutX="216.0" layoutY="416.0" />
+      <JFXTextField fx:id="labelidentifiant" layoutX="223.0" layoutY="495.0" />
+      <JFXTextField fx:id="labelposte" layoutX="215.0" layoutY="570.0" />
+      <JFXTextField fx:id="labelpwd" layoutX="215.0" layoutY="639.0" />
+      <JFXTextField fx:id="labelrole" layoutX="208.0" layoutY="693.0" />
   </children>
 </AnchorPane>

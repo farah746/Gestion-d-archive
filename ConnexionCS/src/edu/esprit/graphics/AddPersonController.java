@@ -6,7 +6,7 @@
 package edu.esprit.graphics;
 
 import edu.testproject.entities.Personne;
-import edu.testproject.services.CRUDPersonne;
+
 import edu.testproject.services.PersonneCRUD;
 import java.awt.Desktop;
 import java.io.File;
@@ -18,6 +18,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,10 +28,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -61,12 +64,26 @@ public class AddPersonController implements Initializable {
     private ImageView image;
     @FXML
     private ImageView imageView;
+    @FXML
+    private TextField tmail;
+    @FXML
+    private TextField tposte;
+    @FXML
+    private TextField tidentifiant;
+    @FXML
+    private TextField tpwd;
+    @FXML
+    private ComboBox<String> trole;
+    @FXML
+    private ComboBox<String> tgenre;
 
     /**
      * Initializes the controller class.
      */
     @Override   
     public void initialize(URL url, ResourceBundle rb) {
+        trole.getItems().addAll("Admin","simple utilisateur","super admin");
+        tgenre.getItems().addAll("homme","femme");
         // TODO
     }    
 
@@ -74,30 +91,39 @@ public class AddPersonController implements Initializable {
     private void addPerson(ActionEvent event) throws IOException {
         PersonneCRUD cp = new PersonneCRUD();
         Personne p = new Personne();
+//      Integer.parseInt(tel.getText())
+//        int a=(int)   
+        p.setCin(Integer.parseInt(tfcin.getText()));
         p.setNom(tfNom.getText());
         p.setPrenom(tfPrenom.getText());
-          p.setCin(tfcin.getText());
-            p.setAdresse(tfadresse.getText());
-             p.setImage(file_image);
-        pathfrom = FileSystems.getDefault().getPath(Current_file.getPath());
+        p.setAdresse(tfadresse.getText());
+        p.setImage(file_image);
+        p.setEmail(tmail.getText());
+        p.setGenre(tgenre.getSelectionModel().getSelectedItem());
+        p.setNumeroidentifiant(Integer.parseInt(tidentifiant.getText()));
+        p.setPoste(tposte.getText());
+        p.setPwd(tpwd.getText());
+        p.setRole(trole.getSelectionModel().getSelectedItem());
         
+        pathfrom = FileSystems.getDefault().getPath(Current_file.getPath());
         pathto = FileSystems.getDefault().getPath("C:\\Users\\MSI\\Documents\\4 go\\4 2ESEMESTRE\\java\\ConnexionCS\\ConnexionCS\\src\\View\\image" + Current_file.getName());
         Path targetDir = FileSystems.getDefault().getPath("C:\\Users\\MSI\\Documents\\4 go\\4 2ESEMESTRE\\java\\ConnexionCS\\ConnexionCS\\src\\View\\image");
-
         Files.copy(pathfrom, pathto, StandardCopyOption.REPLACE_EXISTING);
-        
         cp.ajouterPersonne(p);
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DetailsPerson.fxml"));
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterLicence.fxml"));
         try {
             Parent root = loader.load();
             DetailsPersonController dpc = loader.getController();
-            dpc.setLabelNom(tfNom.getText());
-            dpc.setLabelPrenom(tfPrenom.getText());
-            dpc.setTgcin(tfcin.getText());
-            dpc.setTgadresse(tfadresse.getText());
-            
-            
+//            dpc.setTgcin(tfcin.getText());
+//            dpc.setLabelNom(tfNom.getText());
+//            dpc.setLabelPrenom(tfPrenom.getText());
+//          
+//            dpc.setTgadresse(tfadresse.getText());
+//           
+//               dpc.setLabelemail(tmail.getText());
+//              dpc.setLabelgenre(tgenre.getText());
             
             tfNom.getScene().setRoot(root);
         } catch (IOException ex) {

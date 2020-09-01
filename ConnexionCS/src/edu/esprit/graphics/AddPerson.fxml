@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.graphics.AddPersonController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.graphics.AddPersonController">
   <children>
-    <Label layoutX="122.0" layoutY="117.0" text="NOM:" />
-    <Label layoutX="122.0" layoutY="192.0" text="PRENOM:" />
-    <TextField fx:id="tfNom" layoutX="278.0" layoutY="114.0" prefWidth="200.0" />
-    <TextField fx:id="tfPrenom" layoutX="278.0" layoutY="189.0" prefWidth="200.0" />
-    <Button fx:id="btnValider" layoutX="621.0" layoutY="692.0" mnemonicParsing="false" onAction="#addPerson" text="Valider" />
-      <TextField fx:id="tfcin" layoutX="285.0" layoutY="232.0" />
-      <TextField fx:id="tfadresse" layoutX="285.0" layoutY="298.0" />
-      <Label layoutX="125.0" layoutY="232.0" text="cin" />
-      <Label layoutX="128.0" layoutY="303.0" text="Adresse" />
-      <Button fx:id="uploadImage" layoutX="259.0" layoutY="427.0" mnemonicParsing="false" onAction="#uploadImage" text="parcourir" />
-      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="421.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="694.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true" />
+    <Label layoutX="102.0" layoutY="192.0" text="NOM:" />
+    <Label layoutX="102.0" layoutY="265.0" text="PRENOM:" />
+    <TextField fx:id="tfNom" layoutX="285.0" layoutY="187.0" prefHeight="31.0" prefWidth="187.0" />
+    <TextField fx:id="tfPrenom" layoutX="285.0" layoutY="260.0" prefHeight="31.0" prefWidth="187.0" />
+    <Button fx:id="btnValider" layoutX="621.0" layoutY="688.0" mnemonicParsing="false" onAction="#addPerson" prefHeight="63.0" prefWidth="218.0" text="Ajouter " />
+      <TextField fx:id="tfcin" layoutX="285.0" layoutY="343.0" />
+      <TextField fx:id="tfadresse" layoutX="707.0" layoutY="245.0" />
+      <Label layoutX="102.0" layoutY="339.0" prefHeight="39.0" prefWidth="80.0" text=" CIN:" />
+      <Label layoutX="93.0" layoutY="494.0" prefHeight="31.0" prefWidth="123.0" text="ADRESSE MAIL:" />
+      <Button fx:id="uploadImage" layoutX="1031.0" layoutY="479.0" mnemonicParsing="false" onAction="#uploadImage" text="Choisir image de profil" />
+      <ImageView fx:id="image" fitHeight="364.0" fitWidth="376.0" layoutX="911.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageView" fitHeight="387.0" fitWidth="342.0" layoutX="923.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="tmail" layoutX="285.0" layoutY="485.0" />
+      <TextField fx:id="tposte" layoutX="707.0" layoutY="177.0" />
+      <TextField fx:id="tidentifiant" layoutX="285.0" layoutY="409.0" />
+      <TextField fx:id="tpwd" layoutX="707.0" layoutY="394.0" />
+      <Label layoutX="557.0" layoutY="192.0" prefHeight="21.0" prefWidth="80.0" text="POSTE:" />
+      <Label layoutX="84.0" layoutY="414.0" prefHeight="21.0" prefWidth="116.0" text="   IDENTIFIANT:" />
+      <Label layoutX="557.0" layoutY="255.0" prefHeight="21.0" prefWidth="108.0" text="ADRESSE:" />
+      <Label layoutX="564.0" layoutY="343.0" prefHeight="21.0" prefWidth="67.0" text="GENRE:" />
+      <Label layoutX="564.0" layoutY="404.0" prefHeight="21.0" prefWidth="134.0" text="MOT DE PASSE:" />
+      <Label layoutX="565.0" layoutY="485.0" prefHeight="31.0" prefWidth="65.0" text="ROLE: " />
+      <ComboBox fx:id="trole" editable="true" layoutX="707.0" layoutY="479.0" prefHeight="31.0" prefWidth="187.0" promptText="choisir" />
+      <ComboBox fx:id="tgenre" editable="true" layoutX="707.0" layoutY="328.0" prefHeight="31.0" prefWidth="187.0" promptText="choisir" />
+      <Label layoutX="39.0" layoutY="65.0" prefHeight="77.0" prefWidth="914.0" text="Ajouter un nouveau utilisateur " textFill="#393737">
+         <font>
+            <Font name="System Bold Italic" size="52.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="1404.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../view/téléchargement%20(1)z.png" />
+         </image>
+      </ImageView>
   </children>
 </AnchorPane>

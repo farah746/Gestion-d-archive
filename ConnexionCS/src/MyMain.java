@@ -1,6 +1,7 @@
 
 
-import edu.testproject.services.CRUDPersonne;
+
+import edu.testproject.entities.Personne;
 import edu.testproject.services.PersonneCRUD;
 
 /*
@@ -15,12 +16,13 @@ import edu.testproject.services.PersonneCRUD;
 public class MyMain {
     
     public static void main(String[] args) {
-//        MyService ms1 = MyService.getInstance();
-//        MyService ms2 = MyService.getInstance();
-//        
+     
 //        System.out.println(ms1.hashCode() + " - " +ms2.hashCode());;
     
-        CRUDPersonne myTool = new CRUDPersonne();
-        System.out.println(myTool.listerPersonnes());
+     Personne p= new Personne();
+   PersonneCRUD  pcrud  =new PersonneCRUD();
+   int a=1111;
+       pcrud.displaypersonne();
+       pcrud.supprimerPersonne( p);
     }
 }

@@ -25,18 +25,16 @@ import javafx.stage.Stage;
 public class MyMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("AddPerson.fxml"));
+    public void start(Stage primaryStage) throws IOException {
+        
+            Parent root = FXMLLoader.load(getClass().getResource("LoginMenu.fxml"));
             
             Scene scene = new Scene(root);
             
-            primaryStage.setTitle("Login");
+            primaryStage.setTitle("Loginn");
             primaryStage.setScene(scene);
             primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MyMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
 
     /**

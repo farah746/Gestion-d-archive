@@ -10,23 +10,41 @@ package edu.testproject.entities;
  * @author Karray
  */
 public class Personne {
-    int id;
+    
     String nom;
     String prenom;
-    String Cin;
+    int Cin;
     String Adresse;
-     String Image;
+    String Image;
+    String Genre;
+    String Email;
+    String Pwd;
+    String Role;
+    String Poste;
+    int Numeroidentifiant;
+     
     public Personne() {
     }
 
-    public Personne(int id, String nom, String prenom, String Cin, String Adresse, String Image) {
-        this.id = id;
+    public Personne(String nom, String prenom, int Cin, String Adresse, String Image, String Genre, String Email, String Pwd, String Role, String Poste, int Numeroidentifiant) {
         this.nom = nom;
         this.prenom = prenom;
         this.Cin = Cin;
         this.Adresse = Adresse;
         this.Image = Image;
+        this.Genre = Genre;
+        this.Email = Email;
+        this.Pwd = Pwd;
+        this.Role = Role;
+        this.Poste = Poste;
+        this.Numeroidentifiant = Numeroidentifiant;
     }
+
+    
+
+   
+
+    
 
     public String getImage() {
         return Image;
@@ -38,13 +56,7 @@ public class Personne {
 
   
 
-    public String getCin() {
-        return Cin;
-    }
-
-    public void setCin(String Cin) {
-        this.Cin = Cin;
-    }
+   
 
     public String getAdresse() {
         return Adresse;
@@ -54,15 +66,65 @@ public class Personne {
         this.Adresse = Adresse;
     }
 
+    public int getCin() {
+        return Cin;
+    }
+
+    public void setCin(int Cin) {
+        this.Cin = Cin;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public void setGenre(String Genre) {
+        this.Genre = Genre;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getPwd() {
+        return Pwd;
+    }
+
+    public void setPwd(String Pwd) {
+        this.Pwd = Pwd;
+    }
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String Role) {
+        this.Role = Role;
+    }
+
+    public String getPoste() {
+        return Poste;
+    }
+
+    public void setPoste(String Poste) {
+        this.Poste = Poste;
+    }
+
+    public int getNumeroidentifiant() {
+        return Numeroidentifiant;
+    }
+
+    public void setNumeroidentifiant(int Numeroidentifiant) {
+        this.Numeroidentifiant = Numeroidentifiant;
+    }
+
     
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
     public String getNom() {
         return nom;
@@ -82,8 +144,11 @@ public class Personne {
 
     @Override
     public String toString() {
-        return "Personne{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", Cin=" + Cin + ", Adresse=" + Adresse + ", Image=" + Image + '}';
+        return "Personne{" + "nom=" + nom + ", prenom=" + prenom + ", Cin=" + Cin + ", Adresse=" + Adresse + ", Image=" + Image + ", Genre=" + Genre + ", Email=" + Email + ", Pwd=" + Pwd + ", Role=" + Role + ", Poste=" + Poste + ", Numeroidentifiant=" + Numeroidentifiant + '}';
     }
+
+   
+    
 
    
     
